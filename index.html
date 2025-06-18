@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victória Rodrigues - Advocacia e Consultoria Jurídica</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & a serif font for contrast -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Custom Styles */
+        :root {
+            --color-wine: #6D2932; /* Tom de vinho */
+            --color-gold: #C69F6B; /* Dourado marcante */
+            --color-background: #F9F6F2; /* Fundo off-white */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+        }
+        .hero-section {
+            background-color: var(--color-wine);
+            color: #f8f9fa;
+        }
+        .brand-gold {
+            color: var(--color-gold);
+        }
+        .brand-gold-bg {
+            background-color: var(--color-gold);
+        }
+        .brand-wine {
+            color: var(--color-wine);
+        }
+        .brand-wine-bg {
+            background-color: var(--color-wine);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            color: var(--color-wine); /* Título em cor de vinho */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-gold); /* Sublinhado dourado */
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            filter: brightness(1.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-gold); /* Sublinhado dourado no hover */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="brand-wine-bg text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold brand-gold">Victória Rodrigues</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#atuacao" class="nav-link">Áreas de Atuação</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4" style="background-color: var(--color-wine);">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Início</a>
+            <a href="#sobre" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Sobre</a>
+            <a href="#atuacao" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Áreas de Atuação</a>
+            <a href="#contato" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Victória Rodrigues</h2>
+                <h3 class="text-2xl md:text-3xl brand-gold mb-6">Advocacia e Consultoria Jurídica</h3>
+                <p class="text-lg mb-8 max-w-lg mx-auto md:mx-0 text-justify">Compromisso, excelência e dedicação na defesa dos seus direitos. Soluções jurídicas personalizadas para cada cliente.</p>
+                <a href="#contato" class="cta-button brand-gold-bg text-white font-bold py-3 px-8 rounded-full text-lg shadow-md">
+                    Fale Conosco
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center items-center">
+                <!-- Foto Principal (com o tablet) -->
+                <img src="https://i.imgur.com/WvmsgH2.jpeg" 
+                     alt="Advogada Victória Rodrigues" 
+                     class="w-80 h-80 rounded-full object-cover object-top border-4 shadow-2xl" 
+                     style="border-color: var(--color-gold);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center">Sobre Mim</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <!-- Foto Secundária (sentada) -->
+                <div class="md:w-1/3 flex justify-center order-1">
+                    <img src="https://i.imgur.com/S2eUyNU.jpeg" 
+                         alt="Advogada Victória Rodrigues" 
+                         class="rounded-lg shadow-xl w-full max-w-xs object-cover aspect-[4/5]">
+                </div>
+                <!-- Text -->
+                <div class="md:w-2/3 text-lg leading-relaxed order-2">
+                    <p class="mb-4 text-justify">
+                        Com uma trajetória pautada pela ética e pelo estudo contínuo, dedico-me a oferecer uma advocacia de excelência, focada em resultados e na satisfação dos meus clientes. Minha missão é proporcionar segurança jurídica e soluções eficazes, tratando cada caso com a máxima atenção e personalização.
+                    </p>
+                    <p class="mb-4 text-justify">
+                        Acredito que a relação entre advogado e cliente deve ser baseada na confiança e transparência. Por isso, mantenho uma comunicação clara e constante, explicando cada etapa do processo e alinhando estratégias para alcançar os melhores resultados possíveis.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg flex items-center w-full sm:w-auto" style="background-color: #fdf2f2;">
+                            <i class="fas fa-balance-scale brand-gold text-2xl mr-3"></i>
+                            <span class="font-semibold brand-wine">Missão:</span>&nbsp;Defesa intransigente dos direitos.
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg flex items-center w-full sm:w-auto" style="background-color: #fdf2f2;">
+                            <i class="far fa-eye brand-gold text-2xl mr-3"></i>
+                            <span class="font-semibold brand-wine">Visão:</span>&nbsp;Ser referência em soluções jurídicas.
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg flex items-center w-full sm:w-auto" style="background-color: #fdf2f2;">
+                            <i class="fas fa-handshake brand-gold text-2xl mr-3"></i>
+                            <span class="font-semibold brand-wine">Valores:</span>&nbsp;Ética, Transparência e Comprometimento.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação Section -->
+    <section id="atuacao" class="py-20" style="background-color: var(--color-background);">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center">Áreas de Atuação</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="brand-gold-bg text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-gavel text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-wine mb-3">Direito Criminal</h3>
+                    <p class="text-justify">Defesa em todas as fases do processo penal, desde o inquérito policial até a execução da pena, garantindo os direitos e a liberdade do cliente.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="brand-gold-bg text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-briefcase text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-wine mb-3">Direito Trabalhista</h3>
+                    <p class="text-justify">Atuação em reclamações trabalhistas, defendendo os direitos de empregados e empregadores em questões como horas extras, rescisões e assédio.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="brand-gold-bg text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold brand-wine mb-3">Direito Previdenciário</h3>
+                    <p class="text-justify">Consultoria e atuação em processos de aposentadoria, auxílio-doença, pensão por morte e outros benefícios junto ao INSS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center">Entre em Contato</h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto">Estou à disposição para agendar uma consulta e discutir seu caso. Envie sua mensagem pelo formulário ou utilize um dos canais abaixo.</p>
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="md:w-1/2 p-8 rounded-lg shadow-md" style="background-color: #fdf2f2;">
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Nome</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--color-gold); focus {--tw-ring-color: var(--color-gold)}" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--color-gold); focus {--tw-ring-color: var(--color-gold)}" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--color-gold); focus {--tw-ring-color: var(--color-gold)}" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button brand-wine-bg text-white font-bold py-3 px-8 rounded-full w-full">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                    <div id="form-feedback" class="mt-4 text-center"></div>
+                </div>
+                <!-- Contact Info -->
+                <div class="md:w-1/2 flex flex-col justify-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                           <div class="brand-gold-bg text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                             <i class="fab fa-whatsapp text-2xl"></i>
+                           </div>
+                            <div>
+                                <h4 class="font-bold text-lg brand-wine">WhatsApp</h4>
+                                <a href="https://wa.me/5591981038483" target="_blank" class="hover:underline text-gray-600">(91) 98103-8483</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="brand-gold-bg text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                             <i class="far fa-envelope text-2xl"></i>
+                           </div>
+                            <div>
+                                <h4 class="font-bold text-lg brand-wine">E-mail</h4>
+                                <a href="mailto:victoriadasilvapaz@hotmail.com" class="hover:underline text-gray-600">victoriadasilvapaz@hotmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                             <div class="brand-gold-bg text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                             <i class="far fa-clock text-2xl"></i>
+                           </div>
+                            <div>
+                                <h4 class="font-bold text-lg brand-wine">Horário de Atendimento</h4>
+                                <p class="text-gray-600">Segunda a Sexta, das 9h às 18h</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                             <div class="brand-gold-bg text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                             <i class="fas fa-desktop text-2xl"></i>
+                           </div>
+                            <div>
+                                <h4 class="font-bold text-lg brand-wine">Atendimento Online</h4>
+                                <p class="text-gray-600">Consultas por vídeo-chamada em todo o Brasil.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-center">
+                             <div class="brand-gold-bg text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                             <i class="fas fa-certificate text-2xl"></i>
+                           </div>
+                            <div>
+                                <h4 class="font-bold text-lg brand-wine">Inscrição OAB</h4>
+                                <p class="text-gray-600">OAB/PA 37.972</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="brand-wine-bg text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Victória Rodrigues Advocacia. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-400 mt-2">Este site tem caráter exclusivamente informativo. Para consultas, entre em contato.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formFeedback.textContent = 'Enviando sua mensagem...';
+            formFeedback.className = 'mt-4 text-center text-blue-600';
+
+            // Simulate form submission
+            setTimeout(() => {
+                formFeedback.textContent = 'Obrigado pelo seu contato! Mensagem enviada com sucesso.';
+                formFeedback.className = 'mt-4 text-center font-bold'
+                formFeedback.style.color = 'var(--color-wine)';
+                contactForm.reset();
+                 setTimeout(() => {
+                    formFeedback.textContent = '';
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
