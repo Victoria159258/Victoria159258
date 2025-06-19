@@ -103,6 +103,7 @@
                 <a href="#home" class="nav-link">Início</a>
                 <a href="#sobre" class="nav-link">Sobre</a>
                 <a href="#atuacao" class="nav-link">Áreas de Atuação</a>
+                <a href="artigos.html" class="nav-link">Artigos</a>
                 <a href="#contato" class="nav-link">Contato</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden focus:outline-none">
@@ -114,6 +115,7 @@
             <a href="#home" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Início</a>
             <a href="#sobre" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Sobre</a>
             <a href="#atuacao" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Áreas de Atuação</a>
+            <a href="artigos.html" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Artigos</a>
             <a href="#contato" class="block py-2 px-4 text-sm hover:bg-opacity-20 hover:bg-white rounded">Contato</a>
         </div>
     </header>
@@ -209,9 +211,50 @@
             </div>
         </div>
     </section>
+
+    <!-- Artigos Section -->
+    <section id="artigos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center">Últimos Artigos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exemplo de Artigo 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d044b4a2592?q=80&w=2070&auto=format&fit=crop" alt="Imagem do artigo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold brand-wine mb-2">Fui Demitido Sem Justa Causa: Guia Completo dos Meus Direitos na Rescisão.</h3>
+                        <p class="text-sm text-gray-600 mb-4 text-justify">Detalhe de cada verba rescisória: saldo de salário, aviso prévio, 13º proporcional, férias proporcionais + 1/3, e a multa de 40% do FGTS.</p>
+                        <a href="artigos.html" class="font-bold brand-gold hover:underline">Ler mais &rarr;</a>
+                    </div>
+                </div>
+                <!-- Exemplo de Artigo 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="Imagem do artigo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold brand-wine mb-2">Horas Extras: Sabe como calcular e quando tem direito a recebê-las?</h3>
+                        <p class="text-sm text-gray-600 mb-4 text-justify">Muitos trabalhadores perdem dinheiro por não conhecerem as regras sobre horas extras. Entenda os seus direitos e aprenda a calculá-las.</p>
+                        <a href="artigos.html" class="font-bold brand-gold hover:underline">Ler mais &rarr;</a>
+                    </div>
+                </div>
+                <!-- Exemplo de Artigo 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1631160215438-e489a206253f?q=80&w=2070&auto=format&fit=crop" alt="Imagem do artigo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold brand-wine mb-2">Planeamento da Reforma: Como garantir um futuro tranquilo?</h3>
+                        <p class="text-sm text-gray-600 mb-4 text-justify">A reforma é uma fase importante da vida. Saiba como se planear, conhecer as regras atuais e garantir o melhor benefício possível junto do INSS.</p>
+                        <a href="artigos.html" class="font-bold brand-gold hover:underline">Ler mais &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="artigos.html" class="cta-button brand-wine-bg text-white font-bold py-3 px-8 rounded-full text-lg shadow-md">
+                    Ver todos os artigos
+                </a>
+            </div>
+        </div>
+    </section>
     
     <!-- Contato Section -->
-    <section id="contato" class="py-20 bg-white">
+    <section id="contato" class="py-20" style="background-color: var(--color-background);">
         <div class="container mx-auto px-6">
             <h2 class="section-title text-center">Entre em Contato</h2>
             <p class="text-center text-lg mb-12 max-w-3xl mx-auto">Estou à disposição para agendar uma consulta e discutir o seu caso. Utilize um dos canais abaixo para falar comigo.</p>
@@ -282,12 +325,23 @@
         // Close mobile menu when a link is clicked
         const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
         for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
+            // Check if the link is for an external page
+            if (link.href.includes('artigos.html')) {
+                continue; // Don't add smooth scroll to external links
+            }
+            link.addEventListener('click', (e) => {
+                // Check if the link is to an anchor on the current page
+                if (link.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(link.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
                 mobileMenu.classList.add('hidden');
             });
         }
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for anchor links on the main page
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
